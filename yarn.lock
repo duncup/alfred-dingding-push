@@ -1382,6 +1382,11 @@ dot-prop@^4.0.0, dot-prop@^4.1.0:
   dependencies:
     is-obj "^1.0.0"
 
+duplex-child-process@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/duplex-child-process/-/duplex-child-process-0.0.5.tgz#1c2462b8ec8fd01e432836ebbd592bcdffbb65e9"
+  integrity sha1-HCRiuOyP0B5DKDbrvVkrzf+7Zek=
+
 duplexer2@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.1.4.tgz#8b12dab878c0d69e3e7891051662a32fc6bddcc1"
@@ -3413,6 +3418,13 @@ os-tmpdir@^1.0.0, os-tmpdir@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
+
+osascript@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/osascript/-/osascript-1.2.0.tgz#de82e292f0891dd0858ac5528e5ac772061c2a47"
+  integrity sha1-3oLikvCJHdCFisVSjlrHcgYcKkc=
+  dependencies:
+    duplex-child-process "0.0.5"
 
 osenv@^0.1.0, osenv@^0.1.4:
   version "0.1.5"

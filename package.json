@@ -1,5 +1,5 @@
 {
-  "name": "alfred-testas",
+  "name": "alfred-dingding-push",
   "version": "0.0.0",
   "description": "My extraordinary module",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && ava",
+    "test": "ava",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
@@ -28,7 +28,8 @@
     "alfy"
   ],
   "dependencies": {
-    "alfy": "^0.6.0"
+    "alfy": "^0.6.0",
+    "osascript": "^1.2.0"
   },
   "devDependencies": {
     "alfy-test": "^0.3.0",

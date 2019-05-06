@@ -8,11 +8,50 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
+		<key>4FAAA067-C442-45D6-B84E-144230389F46</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F90279D7-A029-4D28-B55E-C1875230AF33</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C1CD0678-689D-44AF-B996-568E69958281</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>A18048F8-5FC8-42A9-ACA8-C78F3A022E35</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E90C3EE9-E661-431D-A3AE-7F3205D6042F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4FAAA067-C442-45D6-B84E-144230389F46</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F90279D7-A029-4D28-B55E-C1875230AF33</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C3819D7A-2B41-4E55-A31C-91F5615B3A1A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -40,7 +79,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<string>./node_modules/.bin/run-node push.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -68,11 +107,147 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  argv = argv.toString().replace(/^\s+|\s+$/g,"");
+  var app = Application.currentApplication()
+  app.includeStandardAdditions = true
+
+  let answer = app.displayDialog("请输入机器人&lt;"+argv+"&gt;的Token,如为空则删除机器人", {
+    defaultAnswer: "",
+    withIcon: Path('icon.png'),
+    buttons: ["取消", "修改"],
+    defaultButton: "修改",
+  })
+  return JSON.stringify({
+    name: argv,
+    token: answer.textReturned
+  });
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4FAAA067-C442-45D6-B84E-144230389F46</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>ding</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node config.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>ding</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E90C3EE9-E661-431D-A3AE-7F3205D6042F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>机器人:{query}已完成配置。</string>
+				<key>title</key>
+				<string>钉钉机器人推送</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C3819D7A-2B41-4E55-A31C-91F5615B3A1A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node config.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F90279D7-A029-4D28-B55E-C1875230AF33</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>4FAAA067-C442-45D6-B84E-144230389F46</key>
+		<dict>
+			<key>xpos</key>
+			<integer>160</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
 		<key>A18048F8-5FC8-42A9-ACA8-C78F3A022E35</key>
 		<dict>
 			<key>xpos</key>
@@ -87,6 +262,32 @@
 			<key>ypos</key>
 			<integer>20</integer>
 		</dict>
+		<key>C3819D7A-2B41-4E55-A31C-91F5615B3A1A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>E90C3EE9-E661-431D-A3AE-7F3205D6042F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>20</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>F90279D7-A029-4D28-B55E-C1875230AF33</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>debug</key>
+		<string>1</string>
 	</dict>
 	<key>version</key>
 	<string></string>
