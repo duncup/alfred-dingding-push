@@ -76,16 +76,16 @@
 		<key>A18048F8-5FC8-42A9-ACA8-C78F3A022E35</key>
 		<dict>
 			<key>xpos</key>
-			<integer>200</integer>
+			<integer>160</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>20</integer>
 		</dict>
 		<key>C1CD0678-689D-44AF-B996-568E69958281</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>20</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>20</integer>
 		</dict>
 	</dict>
 	<key>version</key>
