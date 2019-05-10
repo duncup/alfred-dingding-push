@@ -18,7 +18,8 @@
     "preuninstall": "alfy-cleanup"
   },
   "files": [
-    "index.js",
+    "config.js",
+    "push.js",
     "icon.png",
     "info.plist"
   ],
