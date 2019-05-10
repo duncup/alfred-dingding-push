@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --global alfred-testas
+$ npm install --global alfred-dingding-push
 ```
 
 *Requires [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
@@ -14,7 +14,7 @@ $ npm install --global alfred-testas
 
 ## Usage
 
-In Alfred, type `testas`, <kbd>Enter</kbd>, and your query.
+In Alfred, type `ding <Name>`, <kbd>Enter</kbd>, to config your token.
 
 
 ## License
